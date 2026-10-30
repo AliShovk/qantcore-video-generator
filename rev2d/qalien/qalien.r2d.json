@@ -1,0 +1,1147 @@
+{
+ "format": "rev2d",
+ "version": 1,
+ "meta": {
+  "name": "qalien",
+  "width": 604,
+  "height": 870,
+  "background": "transparent",
+  "fps": 30,
+  "description": "Q-пришелец: кости рук, ног, антенн, век и рта"
+ },
+ "parameters": [
+  {
+   "id": "Breath",
+   "min": 0,
+   "max": 1,
+   "default": 0
+  },
+  {
+   "id": "Blink",
+   "min": 0,
+   "max": 1,
+   "default": 0
+  },
+  {
+   "id": "Talk",
+   "min": 0,
+   "max": 1,
+   "default": 0
+  },
+  {
+   "id": "Walk",
+   "min": 0,
+   "max": 1,
+   "default": 0
+  },
+  {
+   "id": "Sway",
+   "min": -1,
+   "max": 1,
+   "default": 0
+  }
+ ],
+ "textures": [
+  {
+   "id": "head",
+   "path": "textures/head.png",
+   "width": 446,
+   "height": 340
+  },
+  {
+   "id": "body",
+   "path": "textures/body.png",
+   "width": 330,
+   "height": 240
+  },
+  {
+   "id": "armL",
+   "path": "textures/armL.png",
+   "width": 148,
+   "height": 117
+  },
+  {
+   "id": "armR",
+   "path": "textures/armR.png",
+   "width": 166,
+   "height": 110
+  },
+  {
+   "id": "legL",
+   "path": "textures/legL.png",
+   "width": 95,
+   "height": 108
+  },
+  {
+   "id": "legR",
+   "path": "textures/legR.png",
+   "width": 90,
+   "height": 108
+  },
+  {
+   "id": "shoeL",
+   "path": "textures/shoeL.png",
+   "width": 154,
+   "height": 74
+  },
+  {
+   "id": "shoeR",
+   "path": "textures/shoeR.png",
+   "width": 154,
+   "height": 76
+  },
+  {
+   "id": "antL",
+   "path": "textures/antL.png",
+   "width": 114,
+   "height": 143
+  },
+  {
+   "id": "antR",
+   "path": "textures/antR.png",
+   "width": 140,
+   "height": 148
+  },
+  {
+   "id": "lidL",
+   "path": "textures/lidL.png",
+   "width": 170,
+   "height": 198
+  },
+  {
+   "id": "lidR",
+   "path": "textures/lidR.png",
+   "width": 170,
+   "height": 198
+  },
+  {
+   "id": "mouthCov",
+   "path": "textures/mouthCov.png",
+   "width": 124,
+   "height": 92
+  },
+  {
+   "id": "mouth2",
+   "path": "textures/mouth2.png",
+   "width": 120,
+   "height": 80
+  }
+ ],
+ "bones": [
+  {
+   "id": "root",
+   "x": 300,
+   "y": 812,
+   "length": 0,
+   "description": "земля"
+  },
+  {
+   "id": "hips",
+   "x": 0,
+   "y": -140,
+   "length": 0,
+   "parent": "root",
+   "description": "таз"
+  },
+  {
+   "id": "torso",
+   "x": 0,
+   "y": 0,
+   "length": 0,
+   "parent": "hips",
+   "description": "корпус"
+  },
+  {
+   "id": "head",
+   "x": 0,
+   "y": -202,
+   "length": 0,
+   "parent": "torso",
+   "description": "шея"
+  },
+  {
+   "id": "armL",
+   "x": -150,
+   "y": -177,
+   "length": 120,
+   "parent": "torso",
+   "description": "плечо левое"
+  },
+  {
+   "id": "armR",
+   "x": 105,
+   "y": -177,
+   "length": 120,
+   "parent": "torso",
+   "description": "плечо правое"
+  },
+  {
+   "id": "legL",
+   "x": -60,
+   "y": -4,
+   "length": 92,
+   "parent": "hips",
+   "description": "бедро левое"
+  },
+  {
+   "id": "legR",
+   "x": 60,
+   "y": -4,
+   "length": 92,
+   "parent": "hips",
+   "description": "бедро правое"
+  },
+  {
+   "id": "shoeL",
+   "x": -10,
+   "y": 92,
+   "length": 0,
+   "parent": "legL",
+   "description": "ботинок левый"
+  },
+  {
+   "id": "shoeR",
+   "x": 10,
+   "y": 92,
+   "length": 0,
+   "parent": "legR",
+   "description": "ботинок правый"
+  },
+  {
+   "id": "antL",
+   "x": -120,
+   "y": -310,
+   "length": 90,
+   "parent": "head",
+   "description": "антенна левая"
+  },
+  {
+   "id": "antR",
+   "x": 90,
+   "y": -305,
+   "length": 90,
+   "parent": "head",
+   "description": "антенна правая"
+  },
+  {
+   "id": "lidL",
+   "x": -122,
+   "y": -225,
+   "length": 0,
+   "parent": "head",
+   "description": "веко левое"
+  },
+  {
+   "id": "lidR",
+   "x": 100,
+   "y": -232,
+   "length": 0,
+   "parent": "head",
+   "description": "веко правое"
+  },
+  {
+   "id": "mouth",
+   "x": 0,
+   "y": -88,
+   "length": 0,
+   "parent": "head",
+   "description": "рот"
+  }
+ ],
+ "parts": [
+  {
+   "id": "antL",
+   "parent": "antL",
+   "z": 5,
+   "shape": {
+    "type": "image",
+    "texture": "antL",
+    "x": 82,
+    "y": 25,
+    "w": 114,
+    "h": 143,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "antR",
+   "parent": "antR",
+   "z": 5,
+   "shape": {
+    "type": "image",
+    "texture": "antR",
+    "x": 360,
+    "y": 20,
+    "w": 140,
+    "h": 148,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "armL",
+   "parent": "armL",
+   "z": 6,
+   "shape": {
+    "type": "image",
+    "texture": "armL",
+    "x": 10,
+    "y": 428,
+    "w": 148,
+    "h": 117,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "armR",
+   "parent": "armR",
+   "z": 6,
+   "shape": {
+    "type": "image",
+    "texture": "armR",
+    "x": 396,
+    "y": 430,
+    "w": 166,
+    "h": 110,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "legL",
+   "parent": "legL",
+   "z": 7,
+   "shape": {
+    "type": "image",
+    "texture": "legL",
+    "x": 190,
+    "y": 640,
+    "w": 95,
+    "h": 108,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "legR",
+   "parent": "legR",
+   "z": 7,
+   "shape": {
+    "type": "image",
+    "texture": "legR",
+    "x": 318,
+    "y": 640,
+    "w": 90,
+    "h": 108,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "shoeL",
+   "parent": "shoeL",
+   "z": 8,
+   "shape": {
+    "type": "image",
+    "texture": "shoeL",
+    "x": 128,
+    "y": 714,
+    "w": 154,
+    "h": 74,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "shoeR",
+   "parent": "shoeR",
+   "z": 8,
+   "shape": {
+    "type": "image",
+    "texture": "shoeR",
+    "x": 318,
+    "y": 712,
+    "w": 154,
+    "h": 76,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "body",
+   "parent": "torso",
+   "z": 9,
+   "shape": {
+    "type": "image",
+    "texture": "body",
+    "x": 112,
+    "y": 432,
+    "w": 330,
+    "h": 240,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "head",
+   "parent": "head",
+   "z": 10,
+   "shape": {
+    "type": "image",
+    "texture": "head",
+    "x": 62,
+    "y": 140,
+    "w": 446,
+    "h": 340,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "mouthCov",
+   "parent": "head",
+   "z": 11,
+   "shape": {
+    "type": "image",
+    "texture": "mouthCov",
+    "x": 250,
+    "y": 380,
+    "w": 128,
+    "h": 92,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "mouth",
+   "parent": "mouth",
+   "z": 12,
+   "shape": {
+    "type": "image",
+    "texture": "mouth2",
+    "x": 252,
+    "y": 384,
+    "w": 120,
+    "h": 80,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "lidL",
+   "parent": "lidL",
+   "z": 13,
+   "shape": {
+    "type": "image",
+    "texture": "lidL",
+    "x": 95,
+    "y": 236,
+    "w": 170,
+    "h": 198,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  },
+  {
+   "id": "lidR",
+   "parent": "lidR",
+   "z": 13,
+   "shape": {
+    "type": "image",
+    "texture": "lidR",
+    "x": 317,
+    "y": 229,
+    "w": 170,
+    "h": 198,
+    "cols": 1,
+    "rows": 1
+   },
+   "description": ""
+  }
+ ],
+ "bindings": [
+  {
+   "target": "bone:torso.scaleY",
+   "params": [
+    "Breath"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1.03
+    }
+   ]
+  },
+  {
+   "target": "bone:torso.scaleX",
+   "params": [
+    "Breath"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 0.985
+    }
+   ]
+  },
+  {
+   "target": "bone:lidL.scaleY",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0.02
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1.12
+    }
+   ]
+  },
+  {
+   "target": "bone:lidR.scaleY",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0.02
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1.12
+    }
+   ]
+  },
+  {
+   "target": "part:lidL.opacity",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      0.15
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  },
+  {
+   "target": "part:lidR.opacity",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      0.15
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  },
+  {
+   "target": "part:lidL.opacity",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      0.15
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  },
+  {
+   "target": "part:lidR.opacity",
+   "params": [
+    "Blink"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      0.15
+     ],
+     "value": 1
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  },
+  {
+   "target": "bone:mouth.scaleY",
+   "params": [
+    "Talk"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0.12
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  },
+  {
+   "target": "bone:antL.rotation",
+   "params": [
+    "Sway"
+   ],
+   "keys": [
+    {
+     "at": [
+      -1
+     ],
+     "value": 9
+    },
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": -9
+    }
+   ]
+  },
+  {
+   "target": "bone:antR.rotation",
+   "params": [
+    "Sway"
+   ],
+   "keys": [
+    {
+     "at": [
+      -1
+     ],
+     "value": -7
+    },
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 7
+    }
+   ]
+  },
+  {
+   "target": "bone:legL.rotation",
+   "params": [
+    "Walk"
+   ],
+   "keys": [
+    {
+     "at": [
+      0
+     ],
+     "value": 0
+    },
+    {
+     "at": [
+      1
+     ],
+     "value": 1
+    }
+   ]
+  }
+ ],
+ "animations": [
+  {
+   "id": "idle",
+   "duration": 2.4,
+   "loop": true,
+   "tracks": [
+    {
+     "target": "param:Breath",
+     "keys": [
+      {
+       "t": 0,
+       "v": 0,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.2,
+       "v": 1,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 2.4,
+       "v": 0,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "param:Sway",
+     "keys": [
+      {
+       "t": 0,
+       "v": -0.6,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.2,
+       "v": 0.6,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 2.4,
+       "v": -0.6,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "bone:head.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": -1.5,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.2,
+       "v": 1.5,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 2.4,
+       "v": -1.5,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "param:Blink",
+     "keys": [
+      {
+       "t": 0,
+       "v": 0
+      },
+      {
+       "t": 1.9,
+       "v": 0
+      },
+      {
+       "t": 1.98,
+       "v": 1
+      },
+      {
+       "t": 2.06,
+       "v": 1
+      },
+      {
+       "t": 2.14,
+       "v": 0
+      },
+      {
+       "t": 2.4,
+       "v": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talk",
+   "duration": 0.8,
+   "loop": true,
+   "tracks": [
+    {
+     "target": "param:Talk",
+     "keys": [
+      {
+       "t": 0,
+       "v": 0.15,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.2,
+       "v": 1,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.4,
+       "v": 0.35,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.6,
+       "v": 0.8,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.8,
+       "v": 0.15,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "bone:head.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": 1.2,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.4,
+       "v": -1.2,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.8,
+       "v": 1.2,
+       "ease": "inOutSine"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wave",
+   "duration": 1.1,
+   "loop": true,
+   "tracks": [
+    {
+     "target": "bone:armR.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": -18,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.35,
+       "v": -52,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.7,
+       "v": -18,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.9,
+       "v": -44,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.1,
+       "v": -18,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "bone:armL.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": 6,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.55,
+       "v": -6,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.1,
+       "v": 6,
+       "ease": "inOutSine"
+      }
+     ]
+    },
+    {
+     "target": "bone:head.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": 3,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 0.55,
+       "v": -3,
+       "ease": "inOutSine"
+      },
+      {
+       "t": 1.1,
+       "v": 3,
+       "ease": "inOutSine"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "walk",
+   "duration": 0.9,
+   "loop": true,
+   "tracks": [
+    {
+     "target": "bone:legL.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": -20,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": 22,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": -20,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:legR.rotation",
+     "offset": 0.45,
+     "keys": [
+      {
+       "t": 0,
+       "v": -20,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": 22,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": -20,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:armL.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": 14,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": -14,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": 14,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:armR.rotation",
+     "offset": 0.45,
+     "keys": [
+      {
+       "t": 0,
+       "v": -14,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": 14,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": -14,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:hips.y",
+     "keys": [
+      {
+       "t": 0,
+       "v": -140,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.22,
+       "v": -147,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": -140,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.67,
+       "v": -147,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": -140,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:shoeL.rotation",
+     "keys": [
+      {
+       "t": 0,
+       "v": 8,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": -6,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": 8,
+       "ease": "smooth"
+      }
+     ]
+    },
+    {
+     "target": "bone:shoeR.rotation",
+     "offset": 0.45,
+     "keys": [
+      {
+       "t": 0,
+       "v": 8,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.45,
+       "v": -6,
+       "ease": "smooth"
+      },
+      {
+       "t": 0.9,
+       "v": 8,
+       "ease": "smooth"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
