@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Context Mode: белый фон, схемы из обзора, новый голос (eugene), маскот."""
+import os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
 import json
 import os
 import shutil
 import subprocess
 import sys
 
-sys.path.insert(0, '/opt/qantcore/minibot')
-sys.path.insert(0, '/opt/qantcore/htmlvid')
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg', 'rendering'))
 
 import render  # noqa: E402
 from mascot import Mascot  # noqa: E402

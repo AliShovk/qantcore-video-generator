@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Ролик по обзору Everything Claude Code (18 с) + звуковой дизайн."""
+import os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
 import os
 import subprocess
 import sys
 
-sys.path.insert(0, '/opt/qantcore/minibot')
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
 
 from minibot import MiniBot, Number, Scene, Text  # noqa: E402
 from minibot import sfx  # noqa: E402

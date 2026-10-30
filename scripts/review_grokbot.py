@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Ролик по обзору Grok Bot: HTML-графика через Chrome + бот сверху, лого xAI."""
+import os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
 import os
 import shutil
 import sys
 
-sys.path.insert(0, '/opt/qantcore/minibot')
-sys.path.insert(0, '/opt/qantcore/htmlvid')
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg', 'rendering'))
 
 import render  # noqa: E402
 from minibot import MiniBot, sfx  # noqa: E402

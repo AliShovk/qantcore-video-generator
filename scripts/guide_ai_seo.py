@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """AI-SEO: типографический ролик без персонажа, 1080×1920, Silero."""
+import os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
 import json
 import os
 import shutil
 import sys
 
-sys.path.insert(0, '/opt/qantcore/minibot')
-sys.path.insert(0, '/opt/qantcore/htmlvid')
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg'))
+_sys.path.insert(0, _os.path.join(_ROOT, 'pkg', 'rendering'))
 
 import render  # noqa: E402
 from minibot import sfx  # noqa: E402
