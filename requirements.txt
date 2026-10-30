@@ -1,0 +1,23 @@
+# ядро пайплайна
+pillow>=10.0
+numpy>=1.24
+soundfile>=0.12
+qrcode>=7.4
+
+# озвучка (Silero TTS, CPU)
+torch>=2.2
+omegaconf>=2.3
+
+# htmlvid: покадровый скриншот + сборка
+# нужен google-chrome/chromium и ffmpeg в системе
+
+# whiteboard-движок
+whiteboard-animator>=0.3
+opencv-python-headless>=4.9
+
+# субтитры и проверка таймингов
+openai-whisper>=20231117
+
+# схемы
+# manim (требует libcairo2-dev, libpango1.0-dev, pkg-config, build-essential)
+manim>=0.18

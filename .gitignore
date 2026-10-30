@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+output/
+frames/
+media/
+*.mp4
+*.wav
+*.srt
+fonts/*.ttf
+.env
+*.token
+*.json.bak
