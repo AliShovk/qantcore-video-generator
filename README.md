@@ -12,6 +12,7 @@
 | **htmlvid** | Типографика, count-up, CSS-анимации, скриншоты схем из статей | `pkg/rendering/` |
 | **Manim** | Математические схемы: деревья, пайплайны, метрики | `scripts/orca_scene.py` |
 | **whiteboard-animate** | Эффект рисования от руки | `scripts/whiteboard_*.py` |
+| **sketch** | Рукописные схемы-скетчноуты: дрожащие линии, штриховка, стикеры, дудлы | `sketch/` |
 
 Общее: озвучка Silero TTS (резерв — Piper), подложка и whoosh через numpy-микс, маскот с монетой, SRT.
 
@@ -48,6 +49,7 @@ python3 scripts/whiteboard_graphify.py
 ## Структура
 
 ```
+sketch/            рукописные схемы: sketch.py, template.html (rough.js), lib/rough.js
 pkg/minibot/       персонаж (14 векторных частей), сцена, объекты, голос, звук
 pkg/rendering/     render.py (HTML→Chrome→FFmpeg), mascot.py (птица с монетой)
 scripts/           готовые сценарии роликов: HTML, Manim, whiteboard
