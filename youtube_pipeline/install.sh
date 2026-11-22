@@ -2,12 +2,12 @@
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 PIPELINE_HOME=$HOME/youtube-intelligence
-if [ -n "$YOUTUBE_PIPELINE_HOME" ]; then PIPELINE_HOME=$YOUTUBE_PIPELINE_HOME; fi
+if printenv YOUTUBE_PIPELINE_HOME >/dev/null 2>&1; then PIPELINE_HOME=$(printenv YOUTUBE_PIPELINE_HOME); fi
 HERMES_HOME=$HOME/.hermes
-if [ -n "$HERMES_HOME_OVERRIDE" ]; then HERMES_HOME=$HERMES_HOME_OVERRIDE; fi
+if printenv HERMES_HOME_OVERRIDE >/dev/null 2>&1; then HERMES_HOME=$(printenv HERMES_HOME_OVERRIDE); fi
 SCOUT=$PIPELINE_HOME/sources/youtube-scout
 WRITER=$PIPELINE_HOME/sources/youtube-agent-skill
-mkdir -p "$PIPELINE_HOME/sources" "$PIPELINE_HOME/runs" "$HERMES_HOME/skills"
+mkdir -p "$PIPELINE_HOME/sources" "$PIPELINE_HOME/runs" "$PIPELINE_HOME/bin" "$HERMES_HOME/skills"
 for bin in git python3; do command -v "$bin" >/dev/null || { echo "Missing $bin" >&2; exit 2; }; done
 python3 -c 'import sys; assert sys.version_info >= (3,10), "Python 3.10+ required"'
 if [ ! -d "$SCOUT/.git" ]; then git clone https://github.com/AgriciDaniel/youtube-scout.git "$SCOUT"; fi
@@ -31,7 +31,7 @@ for name in youtube-research-agent youtube-script-agent youtube-shorts-pipeline;
   chmod -R go-rwx "$dst"
 done
 mkdir -p "$HOME/.config/scout"
-if [ ! -f "$HOME/.config/scout/.env" ] && [ -z "$YOUTUBE_API_KEY" ]; then
+if [ ! -f "$HOME/.config/scout/.env" ] && ! printenv YOUTUBE_API_KEY >/dev/null 2>&1; then
   printf '%s\n' 'YOUTUBE_API_KEY=PASTE_KEY_HERE' > "$HOME/.config/scout/.env.example"
   chmod 600 "$HOME/.config/scout/.env.example"
 fi
